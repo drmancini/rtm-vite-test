@@ -1,5 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
+    {{  mnemonic }}
     <example-component
       title="Example component"
       active
@@ -13,6 +14,9 @@
 import { Todo, Meta } from 'components/models'
 import ExampleComponent from 'components/ExampleComponent.vue'
 import { ref } from 'vue'
+
+import raptoreumcore from '@socialruins/raptoreumcore-lib'
+const mnemonic = ref(raptoreumcore.Mnemonic())
 
 const todos = ref<Todo[]>([
   {
